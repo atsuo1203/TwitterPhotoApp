@@ -14,8 +14,7 @@ class PhotoViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = "フォトビューワ"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< 戻る", style: .plain, target: self, action: #selector(self.back))
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(self.back))
-//        self.navigationItem.rightBarButtonItem?.image = UIImage(named: "")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_add"), style: .plain, target: self, action: #selector(self.alert))
     }
 
     override func didReceiveMemoryWarning() {

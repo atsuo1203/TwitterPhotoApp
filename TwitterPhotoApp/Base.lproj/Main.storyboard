@@ -113,6 +113,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_add" translatesAutoresizingMaskIntoConstraints="NO" id="Iyc-Ma-BsH">
+                                <rect key="frame" x="327" y="26" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="afx-g5-EF7"/>
@@ -120,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uyz-2T-cRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2617" y="-36"/>
+            <point key="canvasLocation" x="2616.8000000000002" y="-36.431784107946029"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Ev-tT-UGl">
@@ -139,4 +143,7 @@
             <point key="canvasLocation" x="702" y="-36"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_add" width="24" height="24"/>
+    </resources>
 </document>
