@@ -21,6 +21,8 @@
 		C0E2C00B1FB733D60056B1E9 /* TwitterTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2C00A1FB733D60056B1E9 /* TwitterTools.swift */; };
 		C0E2C00D1FB766C70056B1E9 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2C00C1FB766C70056B1E9 /* Tools.swift */; };
 		C0E2C00F1FB76D0E0056B1E9 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2C00E1FB76D0E0056B1E9 /* PhotoViewController.swift */; };
+		C0E2C0121FB77CC50056B1E9 /* Folder.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E2C0111FB77CC50056B1E9 /* Folder.xib */; };
+		C0E2C0141FB77ED60056B1E9 /* FolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2C0131FB77ED60056B1E9 /* FolderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		C0E2C00A1FB733D60056B1E9 /* TwitterTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterTools.swift; sourceTree = "<group>"; };
 		C0E2C00C1FB766C70056B1E9 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		C0E2C00E1FB76D0E0056B1E9 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		C0E2C0111FB77CC50056B1E9 /* Folder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Folder.xib; sourceTree = "<group>"; };
+		C0E2C0131FB77ED60056B1E9 /* FolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableViewCell.swift; sourceTree = "<group>"; };
 		D2DA8EDCCCDD4151AAE14A1A /* Pods-TwitterPhotoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterPhotoAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterPhotoAppTests/Pods-TwitterPhotoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E858153E65E3A339632D5CF2 /* Pods-TwitterPhotoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterPhotoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterPhotoApp/Pods-TwitterPhotoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FC2543F688517FD7D4F92863 /* Pods-TwitterPhotoAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterPhotoAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterPhotoAppUITests/Pods-TwitterPhotoAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 		C09904381FB6E1F100722361 /* TwitterPhotoApp */ = {
 			isa = PBXGroup;
 			children = (
+				C0E2C0101FB77CAF0056B1E9 /* XIB */,
 				C0E2C0091FB733970056B1E9 /* Common */,
 				C09904391FB6E1F100722361 /* AppDelegate.swift */,
 				C099043B1FB6E1F100722361 /* LoginViewController.swift */,
@@ -173,6 +178,15 @@
 				C0E2C00C1FB766C70056B1E9 /* Tools.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		C0E2C0101FB77CAF0056B1E9 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				C0E2C0111FB77CC50056B1E9 /* Folder.xib */,
+				C0E2C0131FB77ED60056B1E9 /* FolderTableViewCell.swift */,
+			);
+			path = XIB;
 			sourceTree = "<group>";
 		};
 		E6D806F86D61C41EC40450BA /* Frameworks */ = {
@@ -304,6 +318,7 @@
 				C09904441FB6E1F100722361 /* LaunchScreen.storyboard in Resources */,
 				C09904411FB6E1F100722361 /* Assets.xcassets in Resources */,
 				C099043F1FB6E1F100722361 /* Main.storyboard in Resources */,
+				C0E2C0121FB77CC50056B1E9 /* Folder.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +499,7 @@
 				C099043C1FB6E1F100722361 /* LoginViewController.swift in Sources */,
 				C099043A1FB6E1F100722361 /* AppDelegate.swift in Sources */,
 				C0E2C00D1FB766C70056B1E9 /* Tools.swift in Sources */,
+				C0E2C0141FB77ED60056B1E9 /* FolderTableViewCell.swift in Sources */,
 				C0E2C00F1FB76D0E0056B1E9 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
