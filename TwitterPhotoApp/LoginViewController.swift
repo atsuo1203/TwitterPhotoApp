@@ -13,22 +13,18 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        if Twitter.sharedInstance().sessionStore.hasLoggedInUsers() {
-            print("Is Login")
-        }else {
-            print("In not login")
-        }
+        
+        let isLogin = Twitter.sharedInstance().sessionStore.hasLoggedInUsers()
+        print(isLogin)
+        
         let logInButton = TWTRLogInButton { (session, error) in
             if session != nil {
-//                print("aaaaaaaaaaaaaaaaaaaaaaaaa")
-//                print(session?.userName ?? "session")
+                print(session?.userName ?? "session")
                 let story = self.storyboard
-                let next = story?.instantiateViewController(withIdentifier: "Top") as! TopViewController
-                self.navigationController?.pushViewController(next, animated: true)
+                let next = story?.instantiateViewController(withIdentifier: "Navi") as! UINavigationController
+                self.present(next, animated: true, completion: nil)
             } else {
-//                print("bbbbbbbbbbbbbbbbbbbbbbbb")
-//                print(error?.localizedDescription ?? "error")
+                print(error?.localizedDescription ?? "error")
             }
         }
         logInButton.center = self.view.center
