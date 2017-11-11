@@ -53,10 +53,7 @@ class PhotoViewController: UIViewController {
                 Folder.create(name: text).put()
                 self.setData()
             } else {
-                let alert2 = UIAlertController(title: "エラー", message: "そのフォルダは既に存在します", preferredStyle: .alert)
-                let defaultAction2 = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert2.addAction(defaultAction2)
-                self.present(alert2, animated: true, completion: nil)
+                self.errorAlert(title: "エラー", message: "そのフォルダは既に存在します")
             }
         }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
@@ -64,6 +61,12 @@ class PhotoViewController: UIViewController {
         alert.addAction(cancelAction)
         alert.addTextField { (textField) in textField.placeholder = "例:犬 可愛い" }
         present(alert, animated: true, completion: nil)
+    }
+    func errorAlert(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(defaultAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -79,14 +82,30 @@ extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FolderCell", for: indexPath) as! FolderTableViewCell
         cell.folderLabel.text = folderNames[indexPath.row]
+        cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let edit = UITableViewRowAction(style: .normal, title: "編集") {
             (action, indexPath) in
-            
-            tableView.reloadData()
+            let alert = UIAlertController(title: "フォルダ名変更", message: "新しいフォルダ名を入力してください", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                let textField = alert.textFields?[0]
+                let nowText = self.folderNames[indexPath.row]
+                let updateText = textField!.text!
+                if !Folder.checkExistFolder(name: nowText) || !Folder.checkExistFolder(name: updateText) {
+                    Folder.updateName(name: nowText, newName: updateText)
+                    self.setData()
+                } else {
+                    self.errorAlert(title: "エラー", message: "そのフォルダは既に存在します")
+                }
+            })
+            let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+            alert.addAction(defaultAction)
+            alert.addAction(cancelAction)
+            alert.addTextField { (textField) in }
+            self.present(alert, animated: true, completion: nil)
         }
         let delete = UITableViewRowAction(style: .normal, title: "削除") {
             (action, indexPath) in
