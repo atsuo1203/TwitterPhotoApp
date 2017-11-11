@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
         let isLogin = Twitter.sharedInstance().sessionStore.hasLoggedInUsers()
         print(isLogin)
         
+        //認証ボタンを作成して配置
         let logInButton = TWTRLogInButton { (session, error) in
             if session != nil {
                 print(session?.userName ?? "session")

@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Twitter.sharedInstance().start(withConsumerKey: "cKokA4yd6RLtr4y4FjxQ0Andp", consumerSecret: "MkrqZA8ImacCUHXYGvTVFzmmlcfjLENEYVISs0QvmCAmqXLpBO")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        print(Twitter.sharedInstance().sessionStore.hasLoggedInUsers())
         let viewcontroller = Twitter.sharedInstance().sessionStore.hasLoggedInUsers()
             ? "Top"
             : "Login"

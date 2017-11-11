@@ -14,12 +14,7 @@ class TopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        let store = Twitter.sharedInstance().sessionStore
-//        print(store.session()?.userID, store)
-//        if let userId = store.session()?.userID {
-//            store.logOutUserID(userId)
-//            print("logout")
-//        }
+        //TwitterTools.logout()
     }
 
     override func didReceiveMemoryWarning() {

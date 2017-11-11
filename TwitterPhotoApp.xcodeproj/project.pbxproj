@@ -18,6 +18,7 @@
 		C099044F1FB6E1F100722361 /* TwitterPhotoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099044E1FB6E1F100722361 /* TwitterPhotoAppTests.swift */; };
 		C099045A1FB6E1F100722361 /* TwitterPhotoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09904591FB6E1F100722361 /* TwitterPhotoAppUITests.swift */; };
 		C0E2C0061FB70CB80056B1E9 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2C0051FB70CB80056B1E9 /* TopViewController.swift */; };
+		C0E2C00B1FB733D60056B1E9 /* TwitterTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2C00A1FB733D60056B1E9 /* TwitterTools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		C09904591FB6E1F100722361 /* TwitterPhotoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterPhotoAppUITests.swift; sourceTree = "<group>"; };
 		C099045B1FB6E1F100722361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0E2C0051FB70CB80056B1E9 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		C0E2C00A1FB733D60056B1E9 /* TwitterTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterTools.swift; sourceTree = "<group>"; };
 		D2DA8EDCCCDD4151AAE14A1A /* Pods-TwitterPhotoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterPhotoAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterPhotoAppTests/Pods-TwitterPhotoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E858153E65E3A339632D5CF2 /* Pods-TwitterPhotoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterPhotoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterPhotoApp/Pods-TwitterPhotoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FC2543F688517FD7D4F92863 /* Pods-TwitterPhotoAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterPhotoAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterPhotoAppUITests/Pods-TwitterPhotoAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		C09904381FB6E1F100722361 /* TwitterPhotoApp */ = {
 			isa = PBXGroup;
 			children = (
+				C0E2C0091FB733970056B1E9 /* Common */,
 				C09904391FB6E1F100722361 /* AppDelegate.swift */,
 				C099043B1FB6E1F100722361 /* LoginViewController.swift */,
 				C0E2C0051FB70CB80056B1E9 /* TopViewController.swift */,
@@ -156,6 +159,14 @@
 				C099045B1FB6E1F100722361 /* Info.plist */,
 			);
 			path = TwitterPhotoAppUITests;
+			sourceTree = "<group>";
+		};
+		C0E2C0091FB733970056B1E9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C0E2C00A1FB733D60056B1E9 /* TwitterTools.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		E6D806F86D61C41EC40450BA /* Frameworks */ = {
@@ -463,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E2C0061FB70CB80056B1E9 /* TopViewController.swift in Sources */,
+				C0E2C00B1FB733D60056B1E9 /* TwitterTools.swift in Sources */,
 				C099043C1FB6E1F100722361 /* LoginViewController.swift in Sources */,
 				C099043A1FB6E1F100722361 /* AppDelegate.swift in Sources */,
 			);
