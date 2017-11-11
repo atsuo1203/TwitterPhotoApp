@@ -6,7 +6,11 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>twitterkit-cKokA4yd6RLtr4y4FjxQ0Andp</string>
+			<string>cps</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>twitterkit-cKokA4yd6RLtr4y4FjxQ0Andp</string>
+			</array>
 		</dict>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
