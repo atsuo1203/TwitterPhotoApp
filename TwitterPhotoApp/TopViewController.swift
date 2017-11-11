@@ -10,10 +10,15 @@ import UIKit
 import TwitterKit
 
 class TopViewController: UIViewController {
-
+    @IBOutlet weak var logoutView: UIView!
+    @IBOutlet weak var photoView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //設定
+        setGesture()
         
         let client = TWTRAPIClient()
         client.loadUser(withID: TwitterTools.userID()) { (user, error) -> Void in
@@ -28,7 +33,24 @@ class TopViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    //ジェスチャーをセット
+    func setGesture(){
+        let logoutGesture = UITapGestureRecognizer(target: self, action: #selector(self.logoutTapped))
+        self.logoutView.addGestureRecognizer(logoutGesture)
+        
+        let photoGesture = UITapGestureRecognizer(target: self, action: #selector(self.photoTapped))
+        self.photoView.addGestureRecognizer(photoGesture)
+        
+    }
+    
+    //ジェスチャーのアクションまとめ
+    @objc func logoutTapped(){
+        //TwitterTools.logout()
+        print("logout")
+    }
+    @objc func photoTapped(){
+        print("photo")
+    }
     /*
     // MARK: - Navigation
 
