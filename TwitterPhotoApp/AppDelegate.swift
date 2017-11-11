@@ -18,11 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Twitter.sharedInstance().start(withConsumerKey: "cKokA4yd6RLtr4y4FjxQ0Andp", consumerSecret: "MkrqZA8ImacCUHXYGvTVFzmmlcfjLENEYVISs0QvmCAmqXLpBO")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        //ログインしていれば、Top画面に飛ぶ
         let viewcontroller = Twitter.sharedInstance().sessionStore.hasLoggedInUsers()
-            ? storyboard.instantiateViewController(withIdentifier: "Navi") as! UINavigationController
-            : storyboard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+            ? Tools.nextStoryboard(next: "Navi") as! UINavigationController
+            : Tools.nextStoryboard(next: "Login") as! LoginViewController
         window?.rootViewController = viewcontroller
+        
         return true
     }
     

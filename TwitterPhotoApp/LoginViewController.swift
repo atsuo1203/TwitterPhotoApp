@@ -14,18 +14,12 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let isLogin = Twitter.sharedInstance().sessionStore.hasLoggedInUsers()
-        print(isLogin)
-        
         //認証ボタンを作成して配置
         let logInButton = TWTRLogInButton { (session, error) in
             if session != nil {
-                print(session?.userName ?? "session")
-                let storyboard = self.storyboard
-                let next = storyboard?.instantiateViewController(withIdentifier: "Navi") as! UINavigationController
+                //認証が成功すれば、Topに繊維
+                let next = Tools.nextStoryboard(next: "Navi") as! UINavigationController
                 self.present(next, animated: true, completion: nil)
-            } else {
-                print(error?.localizedDescription ?? "error")
             }
         }
         logInButton.center = self.view.center
