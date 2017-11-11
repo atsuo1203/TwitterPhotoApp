@@ -15,8 +15,6 @@ class TopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         //設定
         setGesture()
         
@@ -45,20 +43,13 @@ class TopViewController: UIViewController {
     
     //ジェスチャーのアクションまとめ
     @objc func logoutTapped(){
-        //TwitterTools.logout()
-        print("logout")
+        TwitterTools.logout()
+        let storyboard = self.storyboard
+        let next = storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+        self.present(next, animated: true, completion: nil)
     }
     @objc func photoTapped(){
         print("photo")
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

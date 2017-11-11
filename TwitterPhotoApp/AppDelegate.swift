@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewcontroller = Twitter.sharedInstance().sessionStore.hasLoggedInUsers()
             ? storyboard.instantiateViewController(withIdentifier: "Navi") as! UINavigationController
-            : storyboard.instantiateViewController(withIdentifier: "Login")
+            : storyboard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
         window?.rootViewController = viewcontroller
         return true
     }

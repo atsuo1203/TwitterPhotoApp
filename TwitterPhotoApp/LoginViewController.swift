@@ -21,8 +21,8 @@ class LoginViewController: UIViewController {
         let logInButton = TWTRLogInButton { (session, error) in
             if session != nil {
                 print(session?.userName ?? "session")
-                let story = self.storyboard
-                let next = story?.instantiateViewController(withIdentifier: "Navi") as! UINavigationController
+                let storyboard = self.storyboard
+                let next = storyboard?.instantiateViewController(withIdentifier: "Navi") as! UINavigationController
                 self.present(next, animated: true, completion: nil)
             } else {
                 print(error?.localizedDescription ?? "error")
