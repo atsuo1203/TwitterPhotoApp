@@ -16,7 +16,6 @@ class PhotoViewController: UIViewController {
         super.viewDidLoad()
         //ナビゲーションアイテム設定
         self.navigationItem.title = "フォトビューワ"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< 戻る", style: .plain, target: self, action: #selector(self.back))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_add"), style: .plain, target: self, action: #selector(self.alert))
         //テーブルdelegate設定
         self.photoTableView.delegate = self
@@ -35,11 +34,6 @@ class PhotoViewController: UIViewController {
         let folders = Folder.getAll()
         folderNames = folders.map { $0.name }
         self.photoTableView.reloadData()
-    }
-    
-    //戻るを押した時の処理
-    @objc func back(){
-        self.navigationController?.popViewController(animated: true)
     }
     
     //+ボタンを押した時の処理
@@ -84,6 +78,12 @@ extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
         cell.folderLabel.text = folderNames[indexPath.row]
         cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let next = Tools.nextStoryboard(next: "Detail") as! DetailViewController
+        next.navigationItem.title = folderNames[indexPath.row]
+        self.navigationController?.pushViewController(next, animated: true)
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
