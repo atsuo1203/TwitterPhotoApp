@@ -9,15 +9,18 @@
 import UIKit
 
 class PhotoViewController: UIViewController {
-
+    @IBOutlet weak var photoTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //ナビゲーションアイテム設定
         self.navigationItem.title = "フォトビューワ"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< 戻る", style: .plain, target: self, action: #selector(self.back))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_add"), style: .plain, target: self, action: #selector(self.alert))
-        
-        print(Folder.getAll())
+        //テーブルdelegate設定
+        self.photoTableView.delegate = self
+        self.photoTableView.dataSource = self
+        self.photoTableView.register(UINib.init(nibName: "FolderCell", bundle: nil), forCellReuseIdentifier: "FolderCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,5 +55,16 @@ class PhotoViewController: UIViewController {
         alert.addTextField { (textField) in textField.placeholder = "例:犬 可愛い" }
         present(alert, animated: true, completion: nil)
     }
+}
+
+extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Folder.getAll().count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FolderCell", for: indexPath) as! FolderTableViewCell
+        cell.folderLabel.text = "犬"
+        return cell
+    }
 }
