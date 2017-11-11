@@ -14,12 +14,12 @@ class TopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //TwitterTools.logout()
-        //let user = Twitter.sharedInstance().sessionStore.existingUserSessions().first
+        
         let client = TWTRAPIClient()
         client.loadUser(withID: TwitterTools.userID()) { (user, error) -> Void in
             print(user!.profileImageURL)
             print(user!.profileImageLargeURL)
+            self.navigationItem.title = user!.name
         }
     }
 
