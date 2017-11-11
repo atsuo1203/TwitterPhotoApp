@@ -49,7 +49,8 @@ class TopViewController: UIViewController {
     }
     @objc func photoTapped(){
         let next = Tools.nextStoryboard(next: "Photo") as! PhotoViewController
-        self.present(next, animated: true, completion: nil)
+        self.navigationController?.pushViewController(next, animated: true)
+//        self.present(next, animated: true, completion: nil)
     }
     
 }

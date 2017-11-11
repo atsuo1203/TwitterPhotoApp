@@ -12,12 +12,23 @@ class PhotoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.title = "フォトビューワ"
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< 戻る", style: .plain, target: self, action: #selector(self.back))
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(self.back))
+//        self.navigationItem.rightBarButtonItem?.image = UIImage(named: "")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func back(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func alert(){
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
