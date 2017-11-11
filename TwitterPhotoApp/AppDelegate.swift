@@ -27,6 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
+    
+//    func applicationDidFinishLaunching(_ application: UIApplication) {
+//        let startStoryboard = UserDefaultsHelper.isLogin
+//            ? Storyboard.CategoryList.instantiate(UIViewController.self)
+//            : Storyboard.Register.instantiate(UIViewController.self)
+//        window?.rootViewController = startStoryboard
+//    }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
