@@ -44,12 +44,12 @@ class TopViewController: UIViewController {
     //ジェスチャーのアクションまとめ
     @objc func logoutTapped(){
         TwitterTools.logout()
-        let storyboard = self.storyboard
-        let next = storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+        let next = Tools.nextStoryboard(next: "Login") as! LoginViewController
         self.present(next, animated: true, completion: nil)
     }
     @objc func photoTapped(){
-        print("photo")
+        let next = Tools.nextStoryboard(next: "Photo") as! PhotoViewController
+        self.present(next, animated: true, completion: nil)
     }
     
 }
