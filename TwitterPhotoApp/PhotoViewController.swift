@@ -10,6 +10,7 @@ import UIKit
 
 class PhotoViewController: UIViewController {
     @IBOutlet weak var photoTableView: UITableView!
+    var folderNames = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +22,19 @@ class PhotoViewController: UIViewController {
         self.photoTableView.delegate = self
         self.photoTableView.dataSource = self
         self.photoTableView.register(UINib.init(nibName: "FolderCell", bundle: nil), forCellReuseIdentifier: "FolderCell")
+        //Realm呼び出し
+        setData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setData() {
+        let folders = Folder.getAll()
+        folderNames = folders.map { $0.name }
+        self.photoTableView.reloadData()
     }
     
     //戻るを押した時の処理
@@ -42,6 +51,7 @@ class PhotoViewController: UIViewController {
             //Folderが無ければ作成、あればalert
             if !Folder.checkExistFolder(name: text) {
                 Folder.create(name: text).put()
+                self.setData()
             } else {
                 let alert2 = UIAlertController(title: "エラー", message: "そのフォルダは既に存在します", preferredStyle: .alert)
                 let defaultAction2 = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -59,7 +69,7 @@ class PhotoViewController: UIViewController {
 
 extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Folder.getAll().count
+        return folderNames.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -68,7 +78,32 @@ extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FolderCell", for: indexPath) as! FolderTableViewCell
-        cell.folderLabel.text = "犬"
+        cell.folderLabel.text = folderNames[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let edit = UITableViewRowAction(style: .normal, title: "編集") {
+            (action, indexPath) in
+            
+            tableView.reloadData()
+        }
+        let delete = UITableViewRowAction(style: .normal, title: "削除") {
+            (action, indexPath) in
+            Folder.delete(name: self.folderNames[indexPath.row])
+            self.folderNames.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
+        }
+        
+        edit.backgroundColor = UIColor.orange
+        delete.backgroundColor = UIColor.red
+        
+        return [delete, edit]
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        photoTableView.setEditing(editing, animated: animated)
     }
 }
