@@ -21,4 +21,7 @@ class TwitterTools: NSObject {
         Twitter.sharedInstance().sessionStore.logOutUserID(user_id)
         print("logout")
     }
+    static func userID() -> String {
+        return (Twitter.sharedInstance().sessionStore.session()?.userID)!
+    }
 }

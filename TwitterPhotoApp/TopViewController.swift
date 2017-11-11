@@ -15,6 +15,12 @@ class TopViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //TwitterTools.logout()
+        //let user = Twitter.sharedInstance().sessionStore.existingUserSessions().first
+        let client = TWTRAPIClient()
+        client.loadUser(withID: TwitterTools.userID()) { (user, error) -> Void in
+            print(user!.profileImageURL)
+            print(user!.profileImageLargeURL)
+        }
     }
 
     override func didReceiveMemoryWarning() {
