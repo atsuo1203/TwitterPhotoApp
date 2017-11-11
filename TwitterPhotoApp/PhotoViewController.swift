@@ -62,6 +62,10 @@ extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
         return Folder.getAll().count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FolderCell", for: indexPath) as! FolderTableViewCell
         cell.folderLabel.text = "犬"
