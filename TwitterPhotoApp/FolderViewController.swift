@@ -21,6 +21,9 @@ class FolderViewController: UIViewController {
         self.mainTableView.delegate = self
         self.mainTableView.dataSource = self
         self.mainTableView.register(UINib.init(nibName: "FolderCell", bundle: nil), forCellReuseIdentifier: "FolderCell")
+        //サイズ調整
+        self.mainTableView.estimatedRowHeight = 200
+        self.mainTableView.rowHeight = UITableViewAutomaticDimension
         //Realm呼び出し
         setData()
     }
@@ -70,14 +73,11 @@ extension FolderViewController: UITableViewDelegate, UITableViewDataSource {
         return folderNames.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FolderCell", for: indexPath) as! FolderTableViewCell
         cell.folderLabel.text = folderNames[indexPath.row]
         cell.selectionStyle = .none
+        cell.layoutIfNeeded()
         return cell
     }
     

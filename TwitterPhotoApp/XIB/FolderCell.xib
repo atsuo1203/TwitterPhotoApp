@@ -18,24 +18,35 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ab8-NP-H34">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ab8-NP-H34">
                         <rect key="frame" x="16" y="10" width="343" height="50"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_folder" translatesAutoresizingMaskIntoConstraints="NO" id="siz-Ww-IEk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_folder" translatesAutoresizingMaskIntoConstraints="NO" id="siz-Ww-IEk">
                                 <rect key="frame" x="8" y="10" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="CEr-vm-1pF"/>
+                                    <constraint firstAttribute="width" constant="30" id="ieh-SE-ncK"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odd-ez-TZB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odd-ez-TZB">
                                 <rect key="frame" x="46" y="10" width="250" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Yqd-Wd-CyL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Odd-ez-TZB" secondAttribute="bottom" constant="10" id="BlR-GZ-MgK"/>
+                            <constraint firstItem="Odd-ez-TZB" firstAttribute="top" secondItem="ab8-NP-H34" secondAttribute="top" constant="10" id="c0m-vG-UWc"/>
+                            <constraint firstItem="siz-Ww-IEk" firstAttribute="leading" secondItem="ab8-NP-H34" secondAttribute="leading" constant="8" id="dcJ-qL-gst"/>
+                            <constraint firstItem="Odd-ez-TZB" firstAttribute="leading" secondItem="siz-Ww-IEk" secondAttribute="trailing" constant="8" id="eUs-n8-Dy1"/>
+                            <constraint firstItem="siz-Ww-IEk" firstAttribute="top" secondItem="ab8-NP-H34" secondAttribute="top" constant="10" id="jXQ-K4-M5x"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="10"/>
@@ -43,6 +54,12 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="ab8-NP-H34" secondAttribute="trailing" constant="16" id="Db6-jC-Xda"/>
+                    <constraint firstItem="ab8-NP-H34" firstAttribute="top" secondItem="2Fp-Jp-XdX" secondAttribute="top" constant="10" id="J5H-tj-qCn"/>
+                    <constraint firstItem="ab8-NP-H34" firstAttribute="leading" secondItem="2Fp-Jp-XdX" secondAttribute="leading" constant="16" id="La2-o8-3Ck"/>
+                    <constraint firstAttribute="bottom" secondItem="ab8-NP-H34" secondAttribute="bottom" constant="10" id="aaW-CZ-gAD"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="folderLabel" destination="Odd-ez-TZB" id="kIc-cg-WEl"/>
