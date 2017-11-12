@@ -13,6 +13,7 @@ import SwiftyJSON
 class DetailViewController: UIViewController {
     @IBOutlet weak var mainCollectionView: UICollectionView!
     var imageURLs = [String]()
+    var tweetURLs = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         //collectionView
@@ -44,6 +45,9 @@ class DetailViewController: UIViewController {
                 let json = JSON(data: data!)
                 for tweet in json["statuses"].array! {
                     //print(tweet["entities"]["media"][0]["expanded_url"].string!)
+                    if let tweetURL = tweet["entities"]["media"][0]["expanded_url"].string {
+                        self.tweetURLs.append(tweetURL)
+                    }
                     if let imageURL = tweet["entities"]["media"][0]["media_url"].string {
                         self.imageURLs.append(imageURL)
                         self.mainCollectionView.reloadData()
@@ -61,7 +65,7 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSo
     //cellのサイズ
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = 100
-        let height: CGFloat = 120
+        let height: CGFloat = 100
         return CGSize(width: width, height: height)
     }
     
@@ -73,5 +77,8 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        Tools.showWebView(viewController: self, targetURL: self.tweetURLs[indexPath.row])
+    }
     
 }
