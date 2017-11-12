@@ -12,8 +12,7 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print(self.navigationItem.title!)
     }
 
     override func didReceiveMemoryWarning() {

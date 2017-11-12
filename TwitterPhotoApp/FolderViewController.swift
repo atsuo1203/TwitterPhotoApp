@@ -43,11 +43,12 @@ class FolderViewController: UIViewController {
             let textField = alert.textFields?[0]
             let text = textField!.text!
             //Folderが無ければ作成、あればalert
-            if !Folder.checkExistFolder(name: text) {
+            let check = Folder.checkExistFolder(name: text)
+            if  !check.0 {
                 Folder.create(name: text).put()
                 self.setData()
             } else {
-                self.errorAlert(title: "エラー", message: "そのフォルダは既に存在します")
+                self.errorAlert(title: "エラー", message: check.1)
             }
         }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
@@ -94,11 +95,13 @@ extension FolderViewController: UITableViewDelegate, UITableViewDataSource {
                 let textField = alert.textFields?[0]
                 let nowText = self.folderNames[indexPath.row]
                 let updateText = textField!.text!
-                if !Folder.checkExistFolder(name: nowText) || !Folder.checkExistFolder(name: updateText) {
+                let check = Folder.checkExistFolder(name: nowText)
+                let check2 = Folder.checkExistFolder(name: updateText)
+                if !check.0 || !check2.0 {
                     Folder.updateName(name: nowText, newName: updateText)
                     self.setData()
                 } else {
-                    self.errorAlert(title: "エラー", message: "そのフォルダは既に存在します")
+                    self.errorAlert(title: "エラー", message: check.1)
                 }
             })
             let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)

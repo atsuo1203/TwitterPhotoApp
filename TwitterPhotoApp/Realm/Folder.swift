@@ -95,13 +95,16 @@ class Folder: Object {
     }
     
     //既にFolderがあるかどうかチェック
-    static func checkExistFolder(name: String) -> Bool {
+    static func checkExistFolder(name: String) -> (Bool, String) {
         let folders = getAll()
-        var isExist = false
+        var isExist = (false, "")
         folders.forEach { (folder) in
             if folder.name == name {
-                isExist = true
+                isExist = (true, "そのフォルダは既に存在します")
             }
+        }
+        if name.trimmingCharacters(in: .whitespaces).uppercased() == "" {
+            isExist = (true, "文字を入力してください")
         }
         return isExist
     }
