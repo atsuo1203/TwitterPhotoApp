@@ -42,10 +42,10 @@
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Odd-ez-TZB" secondAttribute="bottom" constant="10" id="BlR-GZ-MgK"/>
+                            <constraint firstItem="siz-Ww-IEk" firstAttribute="centerY" secondItem="ab8-NP-H34" secondAttribute="centerY" id="Qoy-xJ-LuT"/>
                             <constraint firstItem="Odd-ez-TZB" firstAttribute="top" secondItem="ab8-NP-H34" secondAttribute="top" constant="10" id="c0m-vG-UWc"/>
                             <constraint firstItem="siz-Ww-IEk" firstAttribute="leading" secondItem="ab8-NP-H34" secondAttribute="leading" constant="8" id="dcJ-qL-gst"/>
                             <constraint firstItem="Odd-ez-TZB" firstAttribute="leading" secondItem="siz-Ww-IEk" secondAttribute="trailing" constant="8" id="eUs-n8-Dy1"/>
-                            <constraint firstItem="siz-Ww-IEk" firstAttribute="top" secondItem="ab8-NP-H34" secondAttribute="top" constant="10" id="jXQ-K4-M5x"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

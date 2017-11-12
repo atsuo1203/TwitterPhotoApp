@@ -61,10 +61,10 @@ class DetailViewController: UIViewController {
     
     //extraViewが出て来る処理
     private func showView() {
+        extraView.alpha = 1
         extraView.center = self.view.center
         self.view.addSubview(extraView)
     }
-    
     //extraViewが消える処理
     private func hideView() {
         extraView.alpha = 0

@@ -108,5 +108,10 @@ class Folder: Object {
         }
         return isExist
     }
+    
+    //Folderが存在しているかチェック
+    static func isFolderExist() -> Bool {
+        return getAll().count > 0
+    }
 }
 

@@ -10,6 +10,7 @@ import UIKit
 
 class FolderViewController: UIViewController {
     @IBOutlet weak var mainTableView: UITableView!
+    @IBOutlet weak var extraView: UIView!
     var folderNames = [String]()
     
     override func viewDidLoad() {
@@ -24,6 +25,10 @@ class FolderViewController: UIViewController {
         //サイズ調整
         self.mainTableView.estimatedRowHeight = 200
         self.mainTableView.rowHeight = UITableViewAutomaticDimension
+        //初めて開いた時何も無ければ説明出現
+        if !Folder.isFolderExist() {
+            self.showView()
+        }
         //Realm呼び出し
         setData()
     }
@@ -49,6 +54,7 @@ class FolderViewController: UIViewController {
             let check = Folder.checkExistFolder(name: text)
             if  !check.0 {
                 Folder.create(name: text).put()
+                self.hideView()
                 self.setData()
             } else {
                 self.errorAlert(title: "エラー", message: check.1)
@@ -57,7 +63,7 @@ class FolderViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
         alert.addAction(defaultAction)
         alert.addAction(cancelAction)
-        alert.addTextField { (textField) in textField.placeholder = "例:犬 可愛い" }
+        alert.addTextField { (textField) in textField.placeholder = "例:可愛い 犬 チワワ" }
         present(alert, animated: true, completion: nil)
     }
     func errorAlert(title: String, message: String){
@@ -65,6 +71,17 @@ class FolderViewController: UIViewController {
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(defaultAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    //extraViewが出て来る処理
+    private func showView() {
+        extraView.alpha = 1
+        extraView.center = self.view.center
+        self.view.addSubview(extraView)
+    }
+    //extraViewが消える処理
+    private func hideView() {
+        extraView.alpha = 0
     }
 }
 
@@ -116,6 +133,9 @@ extension FolderViewController: UITableViewDelegate, UITableViewDataSource {
             self.folderNames.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.reloadData()
+            if !Folder.isFolderExist() {
+                self.showView()
+            }
         }
         
         edit.backgroundColor = UIColor.orange
