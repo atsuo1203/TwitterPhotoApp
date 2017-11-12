@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
         self.mainCollectionView.delegate = self
         self.mainCollectionView.dataSource = self
         self.mainCollectionView.register(UINib.init(nibName: "ImageCell", bundle: nil), forCellWithReuseIdentifier: "ImageCell")
-        getSantaGirls()
+        getRequest()
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,13 +27,13 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func getSantaGirls() {
+    func getRequest() {
         let client = TWTRAPIClient()
         let endpoint = "https://api.twitter.com/1.1/search/tweets.json"
         let params = [
-            "q": "#サンタコス -割 -Set -メイド風 -アクセント -点セット -お買い得 -#子供 -#マンチカン -#サンタ衣装 -#コスチューム -#sugar filter:images exclude:retweets ",
+            "q": self.navigationItem.title! + " filter:images exclude:retweets ",
             "lang": "ja",
-            "count": "5",
+            "count": "10",
             ]
         var clientError : NSError?
         let request = client.urlRequest(withMethod: "GET", url: endpoint, parameters: params, error: &clientError)
