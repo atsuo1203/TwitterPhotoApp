@@ -11,13 +11,13 @@ import TwitterKit
 import SwiftyJSON
 
 class DetailViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(self.navigationItem.title!)
         getSantaGirls()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -29,22 +29,21 @@ class DetailViewController: UIViewController {
         let params = [
             "q": "#サンタコス -割 -Set -メイド風 -アクセント -点セット -お買い得 -#子供 -#マンチカン -#サンタ衣装 -#コスチューム -#sugar filter:images exclude:retweets ",
             "lang": "ja",
-            "count": "1",
+            "count": "5",
             ]
         var clientError : NSError?
         let request = client.urlRequest(withMethod: "GET", url: endpoint, parameters: params, error: &clientError)
         client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
             if connectionError != nil {
                 print("Error: \(String(describing: connectionError))")
-            }
-            
-            do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                print("json: \(json)")
-            } catch let jsonError as NSError {
-                print("json error: \(jsonError.localizedDescription)")
-            }
-        }
+            } else{
+                let json = JSON(data: data!)
+                for tweet in json["statuses"].array! {
+                    if let imageURL = tweet["entities"]["media"][0]["media_url"].string {
+                        //                        self.images.append(imageURL)
+                        //                        self.collectionView.reloadData()
+                        print(imageURL)
+                    }
+                }}}
     }
-
 }
