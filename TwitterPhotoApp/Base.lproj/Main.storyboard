@@ -180,10 +180,30 @@
                         <viewLayoutGuide key="safeArea" id="vMI-DX-LAX"/>
                     </view>
                     <connections>
+                        <outlet property="extraView" destination="qYP-hc-vox" id="uYW-rD-R77"/>
                         <outlet property="mainCollectionView" destination="Kwm-Ew-2gN" id="jxs-ie-gW1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZb-va-kh7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="qYP-hc-vox">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_sync" translatesAutoresizingMaskIntoConstraints="NO" id="lJy-BO-SUx">
+                            <rect key="frame" x="95" y="20" width="50" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ロード中..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnQ-U6-kUi">
+                            <rect key="frame" x="70" y="78" width="100" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <viewLayoutGuide key="safeArea" id="8vx-lm-iZg"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="3420" y="-36.431784107946029"/>
         </scene>
@@ -232,4 +252,7 @@
             <point key="canvasLocation" x="1244" y="782"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_sync" width="24" height="24"/>
+    </resources>
 </document>

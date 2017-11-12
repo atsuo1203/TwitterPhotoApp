@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class DetailViewController: UIViewController {
     @IBOutlet weak var mainCollectionView: UICollectionView!
+    @IBOutlet weak var extraView: UIView!
     var imageURLs = [String]()
     var tweetURLs = [String]()
     override func viewDidLoad() {
@@ -20,6 +21,7 @@ class DetailViewController: UIViewController {
         self.mainCollectionView.delegate = self
         self.mainCollectionView.dataSource = self
         self.mainCollectionView.register(UINib.init(nibName: "ImageCell", bundle: nil), forCellWithReuseIdentifier: "ImageCell")
+        self.showView()
         getRequest()
     }
     
@@ -53,7 +55,19 @@ class DetailViewController: UIViewController {
                         self.mainCollectionView.reloadData()
                     }
                 }
+                self.hideView()
             }}
+    }
+    
+    //extraViewが出て来る処理
+    private func showView() {
+        extraView.center = self.view.center
+        self.view.addSubview(extraView)
+    }
+    
+    //extraViewが消える処理
+    private func hideView() {
+        extraView.alpha = 0
     }
 }
 
