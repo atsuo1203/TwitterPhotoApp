@@ -20,8 +20,8 @@ class TopViewController: UIViewController {
         
         let client = TWTRAPIClient()
         client.loadUser(withID: TwitterTools.userID()) { (user, error) -> Void in
-            print(user!.profileImageURL)
-            print(user!.profileImageLargeURL)
+//            print(user!.profileImageURL)
+//            print(user!.profileImageLargeURL)
             self.navigationItem.title = user!.name
         }
     }

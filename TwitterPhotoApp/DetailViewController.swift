@@ -43,6 +43,7 @@ class DetailViewController: UIViewController {
             } else{
                 let json = JSON(data: data!)
                 for tweet in json["statuses"].array! {
+                    //print(tweet["entities"]["media"][0]["expanded_url"].string!)
                     if let imageURL = tweet["entities"]["media"][0]["media_url"].string {
                         self.imageURLs.append(imageURL)
                         self.mainCollectionView.reloadData()
