@@ -56,6 +56,15 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iTt-Vi-37n">
                                 <rect key="frame" x="16" y="147" width="343" height="442"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bin-yS-B7P">
+                                        <rect key="frame" x="8" y="8" width="327" height="426"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <connections>
+                                            <segue destination="Hsx-LT-Alr" kind="embed" id="aLc-CS-ijo"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -193,6 +202,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJe-9l-91E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="702" y="-36"/>
+        </scene>
+        <!--List Timeline View Controller-->
+        <scene sceneID="Glr-Hj-CHz">
+            <objects>
+                <tableViewController storyboardIdentifier="TimeLine" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hsx-LT-Alr" customClass="ListTimelineViewController" customModule="TwitterPhotoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ixj-ps-lGv">
+                        <rect key="frame" x="0.0" y="0.0" width="327" height="426"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Kuc-mz-0Kx">
+                                <rect key="frame" x="0.0" y="28" width="327" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kuc-mz-0Kx" id="2cv-yh-9Dj">
+                                    <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Hsx-LT-Alr" id="g1S-AM-Tkt"/>
+                            <outlet property="delegate" destination="Hsx-LT-Alr" id="fh3-j7-ZJG"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5xw-zR-PFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1244" y="782"/>
         </scene>
     </scenes>
 </document>

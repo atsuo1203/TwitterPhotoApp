@@ -12,6 +12,7 @@
 		BE8329646DB0830381E81213 /* Pods_TwitterPhotoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3650F74C6ACDC03A6CBF0A34 /* Pods_TwitterPhotoAppTests.framework */; };
 		C01D184C1FB84524003CCCB6 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C01D184B1FB84524003CCCB6 /* ImageCell.xib */; };
 		C01D184E1FB8475D003CCCB6 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01D184D1FB8475D003CCCB6 /* ImageCollectionViewCell.swift */; };
+		C01D18541FB886E4003CCCB6 /* ListTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01D18531FB886E4003CCCB6 /* ListTimelineViewController.swift */; };
 		C099043A1FB6E1F100722361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09904391FB6E1F100722361 /* AppDelegate.swift */; };
 		C099043C1FB6E1F100722361 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099043B1FB6E1F100722361 /* LoginViewController.swift */; };
 		C099043F1FB6E1F100722361 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C099043D1FB6E1F100722361 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		7FAA6874E3F0E70C76FB4187 /* Pods-TwitterPhotoAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterPhotoAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterPhotoAppUITests/Pods-TwitterPhotoAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C01D184B1FB84524003CCCB6 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		C01D184D1FB8475D003CCCB6 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		C01D18531FB886E4003CCCB6 /* ListTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTimelineViewController.swift; sourceTree = "<group>"; };
 		C09904361FB6E1F100722361 /* TwitterPhotoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterPhotoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09904391FB6E1F100722361 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C099043B1FB6E1F100722361 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				C0E2C0051FB70CB80056B1E9 /* TopViewController.swift */,
 				C0E2C00E1FB76D0E0056B1E9 /* FolderViewController.swift */,
 				C0FE987F1FB79AF500B5B5ED /* DetailViewController.swift */,
+				C01D18531FB886E4003CCCB6 /* ListTimelineViewController.swift */,
 				C099043D1FB6E1F100722361 /* Main.storyboard */,
 				C09904401FB6E1F100722361 /* Assets.xcassets */,
 				C09904421FB6E1F100722361 /* LaunchScreen.storyboard */,
@@ -522,6 +525,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C01D18541FB886E4003CCCB6 /* ListTimelineViewController.swift in Sources */,
 				C0FE98801FB79AF500B5B5ED /* DetailViewController.swift in Sources */,
 				C0E2C0061FB70CB80056B1E9 /* TopViewController.swift in Sources */,
 				C0E2C00B1FB733D60056B1E9 /* TwitterTools.swift in Sources */,
