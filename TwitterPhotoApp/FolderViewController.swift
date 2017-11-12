@@ -18,6 +18,9 @@ class FolderViewController: UIViewController {
         //ナビゲーションアイテム設定
         self.navigationItem.title = "フォトビューワ"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_add"), style: .plain, target: self, action: #selector(self.alert))
+        if TwitterTools.userID() == "" {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Login画面へ", style: .plain, target: self, action: #selector(self.moveLogin))
+        }
         //テーブルdelegate設定
         self.mainTableView.delegate = self
         self.mainTableView.dataSource = self
@@ -66,6 +69,12 @@ class FolderViewController: UIViewController {
         alert.addTextField { (textField) in textField.placeholder = "例:可愛い 犬 チワワ" }
         present(alert, animated: true, completion: nil)
     }
+    //左ボタン(非ログイン時)を押した時の処理
+    @objc func moveLogin(){
+        let next = Tools.nextStoryboard(next: "Login")
+        present(next, animated: true, completion: nil)
+    }
+    
     func errorAlert(title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
