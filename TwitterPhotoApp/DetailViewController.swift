@@ -11,10 +11,14 @@ import TwitterKit
 import SwiftyJSON
 
 class DetailViewController: UIViewController {
-    
+    @IBOutlet weak var mainCollectionView: UICollectionView!
+    var imageURLs = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.navigationItem.title!)
+        //collectionView
+        self.mainCollectionView.delegate = self
+        self.mainCollectionView.dataSource = self
+        self.mainCollectionView.register(UINib.init(nibName: "ImageCell", bundle: nil), forCellWithReuseIdentifier: "ImageCell")
         getSantaGirls()
     }
     
@@ -40,10 +44,33 @@ class DetailViewController: UIViewController {
                 let json = JSON(data: data!)
                 for tweet in json["statuses"].array! {
                     if let imageURL = tweet["entities"]["media"][0]["media_url"].string {
-                        //                        self.images.append(imageURL)
-                        //                        self.collectionView.reloadData()
-                        print(imageURL)
+                        self.imageURLs.append(imageURL)
+                        self.mainCollectionView.reloadData()
                     }
-                }}}
+                }
+            }}
     }
+}
+
+extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.imageURLs.count
+    }
+    
+    //cellのサイズ
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = 100
+        let height: CGFloat = 120
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCollectionViewCell
+        let url = URL(string: self.imageURLs[indexPath.row])!
+        let imageData = try? Data.init(contentsOf: url)
+        cell.imageView.image = UIImage(data: imageData!)
+        return cell
+    }
+    
+    
 }

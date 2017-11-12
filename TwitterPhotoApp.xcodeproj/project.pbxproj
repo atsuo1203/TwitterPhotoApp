@@ -10,6 +10,8 @@
 		1B8B9CDE9C1F8B6A6FBCB856 /* Pods_TwitterPhotoAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A353F16AD803C491ECA800B /* Pods_TwitterPhotoAppUITests.framework */; };
 		63E4E62C5112DA4108DE3EFA /* Pods_TwitterPhotoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460C019080A32718E52B71F9 /* Pods_TwitterPhotoApp.framework */; };
 		BE8329646DB0830381E81213 /* Pods_TwitterPhotoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3650F74C6ACDC03A6CBF0A34 /* Pods_TwitterPhotoAppTests.framework */; };
+		C01D184C1FB84524003CCCB6 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C01D184B1FB84524003CCCB6 /* ImageCell.xib */; };
+		C01D184E1FB8475D003CCCB6 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01D184D1FB8475D003CCCB6 /* ImageCollectionViewCell.swift */; };
 		C099043A1FB6E1F100722361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09904391FB6E1F100722361 /* AppDelegate.swift */; };
 		C099043C1FB6E1F100722361 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099043B1FB6E1F100722361 /* LoginViewController.swift */; };
 		C099043F1FB6E1F100722361 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C099043D1FB6E1F100722361 /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		4BDE519E4451F9A0C4EEAAE5 /* Pods-TwitterPhotoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterPhotoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterPhotoApp/Pods-TwitterPhotoApp.release.xcconfig"; sourceTree = "<group>"; };
 		6530B9D654707D9E1624D1BD /* Pods-TwitterPhotoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterPhotoAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterPhotoAppTests/Pods-TwitterPhotoAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		7FAA6874E3F0E70C76FB4187 /* Pods-TwitterPhotoAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterPhotoAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterPhotoAppUITests/Pods-TwitterPhotoAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C01D184B1FB84524003CCCB6 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		C01D184D1FB8475D003CCCB6 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		C09904361FB6E1F100722361 /* TwitterPhotoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterPhotoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09904391FB6E1F100722361 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C099043B1FB6E1F100722361 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 			children = (
 				C0E2C0111FB77CC50056B1E9 /* FolderCell.xib */,
 				C0E2C0131FB77ED60056B1E9 /* FolderTableViewCell.swift */,
+				C01D184B1FB84524003CCCB6 /* ImageCell.xib */,
+				C01D184D1FB8475D003CCCB6 /* ImageCollectionViewCell.swift */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -332,6 +338,7 @@
 				C09904441FB6E1F100722361 /* LaunchScreen.storyboard in Resources */,
 				C09904411FB6E1F100722361 /* Assets.xcassets in Resources */,
 				C099043F1FB6E1F100722361 /* Main.storyboard in Resources */,
+				C01D184C1FB84524003CCCB6 /* ImageCell.xib in Resources */,
 				C0E2C0121FB77CC50056B1E9 /* FolderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +528,7 @@
 				C099043C1FB6E1F100722361 /* LoginViewController.swift in Sources */,
 				C0FE987C1FB781A900B5B5ED /* Folder.swift in Sources */,
 				C099043A1FB6E1F100722361 /* AppDelegate.swift in Sources */,
+				C01D184E1FB8475D003CCCB6 /* ImageCollectionViewCell.swift in Sources */,
 				C0E2C00D1FB766C70056B1E9 /* Tools.swift in Sources */,
 				C0E2C0141FB77ED60056B1E9 /* FolderTableViewCell.swift in Sources */,
 				C0E2C00F1FB76D0E0056B1E9 /* FolderViewController.swift in Sources */,
