@@ -96,10 +96,10 @@
             </objects>
             <point key="canvasLocation" x="1816.8" y="-36.431784107946029"/>
         </scene>
-        <!--Photo View Controller-->
+        <!--Folder View Controller-->
         <scene sceneID="HbA-7G-pq3">
             <objects>
-                <viewController storyboardIdentifier="Photo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="icj-Tg-oRT" customClass="PhotoViewController" customModule="TwitterPhotoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Folder" useStoryboardIdentifierAsRestorationIdentifier="YES" id="icj-Tg-oRT" customClass="FolderViewController" customModule="TwitterPhotoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vMA-FJ-Qy6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,7 +123,7 @@
                         <viewLayoutGuide key="safeArea" id="afx-g5-EF7"/>
                     </view>
                     <connections>
-                        <outlet property="photoTableView" destination="BRT-6J-uMK" id="4My-jW-neh"/>
+                        <outlet property="mainTableView" destination="BRT-6J-uMK" id="Qrm-Go-bpd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uyz-2T-cRy" userLabel="First Responder" sceneMemberID="firstResponder"/>

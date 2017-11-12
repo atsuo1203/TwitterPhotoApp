@@ -20,7 +20,7 @@
 		C0E2C0061FB70CB80056B1E9 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2C0051FB70CB80056B1E9 /* TopViewController.swift */; };
 		C0E2C00B1FB733D60056B1E9 /* TwitterTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2C00A1FB733D60056B1E9 /* TwitterTools.swift */; };
 		C0E2C00D1FB766C70056B1E9 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2C00C1FB766C70056B1E9 /* Tools.swift */; };
-		C0E2C00F1FB76D0E0056B1E9 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2C00E1FB76D0E0056B1E9 /* PhotoViewController.swift */; };
+		C0E2C00F1FB76D0E0056B1E9 /* FolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2C00E1FB76D0E0056B1E9 /* FolderViewController.swift */; };
 		C0E2C0121FB77CC50056B1E9 /* FolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E2C0111FB77CC50056B1E9 /* FolderCell.xib */; };
 		C0E2C0141FB77ED60056B1E9 /* FolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2C0131FB77ED60056B1E9 /* FolderTableViewCell.swift */; };
 		C0FE987C1FB781A900B5B5ED /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE987B1FB781A900B5B5ED /* Folder.swift */; };
@@ -67,7 +67,7 @@
 		C0E2C0051FB70CB80056B1E9 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		C0E2C00A1FB733D60056B1E9 /* TwitterTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterTools.swift; sourceTree = "<group>"; };
 		C0E2C00C1FB766C70056B1E9 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
-		C0E2C00E1FB76D0E0056B1E9 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		C0E2C00E1FB76D0E0056B1E9 /* FolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewController.swift; sourceTree = "<group>"; };
 		C0E2C0111FB77CC50056B1E9 /* FolderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FolderCell.xib; sourceTree = "<group>"; };
 		C0E2C0131FB77ED60056B1E9 /* FolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableViewCell.swift; sourceTree = "<group>"; };
 		C0FE987B1FB781A900B5B5ED /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 				C09904391FB6E1F100722361 /* AppDelegate.swift */,
 				C099043B1FB6E1F100722361 /* LoginViewController.swift */,
 				C0E2C0051FB70CB80056B1E9 /* TopViewController.swift */,
-				C0E2C00E1FB76D0E0056B1E9 /* PhotoViewController.swift */,
+				C0E2C00E1FB76D0E0056B1E9 /* FolderViewController.swift */,
 				C0FE987F1FB79AF500B5B5ED /* DetailViewController.swift */,
 				C099043D1FB6E1F100722361 /* Main.storyboard */,
 				C09904401FB6E1F100722361 /* Assets.xcassets */,
@@ -521,7 +521,7 @@
 				C099043A1FB6E1F100722361 /* AppDelegate.swift in Sources */,
 				C0E2C00D1FB766C70056B1E9 /* Tools.swift in Sources */,
 				C0E2C0141FB77ED60056B1E9 /* FolderTableViewCell.swift in Sources */,
-				C0E2C00F1FB76D0E0056B1E9 /* PhotoViewController.swift in Sources */,
+				C0E2C00F1FB76D0E0056B1E9 /* FolderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

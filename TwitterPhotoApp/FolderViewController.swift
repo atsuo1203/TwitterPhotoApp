@@ -1,6 +1,6 @@
 //
-//  PhotoViewController.swift
-//  TwitterPhotoApp
+//  mainViewController.swift
+//  TwittermainApp
 //
 //  Created by Atsuo Yonehara on 2017/11/12.
 //  Copyright © 2017年 Atsuo Yonehara. All rights reserved.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class PhotoViewController: UIViewController {
-    @IBOutlet weak var photoTableView: UITableView!
+class FolderViewController: UIViewController {
+    @IBOutlet weak var mainTableView: UITableView!
     var folderNames = [String]()
     
     override func viewDidLoad() {
@@ -18,9 +18,9 @@ class PhotoViewController: UIViewController {
         self.navigationItem.title = "フォトビューワ"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_add"), style: .plain, target: self, action: #selector(self.alert))
         //テーブルdelegate設定
-        self.photoTableView.delegate = self
-        self.photoTableView.dataSource = self
-        self.photoTableView.register(UINib.init(nibName: "FolderCell", bundle: nil), forCellReuseIdentifier: "FolderCell")
+        self.mainTableView.delegate = self
+        self.mainTableView.dataSource = self
+        self.mainTableView.register(UINib.init(nibName: "FolderCell", bundle: nil), forCellReuseIdentifier: "FolderCell")
         //Realm呼び出し
         setData()
     }
@@ -33,7 +33,7 @@ class PhotoViewController: UIViewController {
     func setData() {
         let folders = Folder.getAll()
         folderNames = folders.map { $0.name }
-        self.photoTableView.reloadData()
+        self.mainTableView.reloadData()
     }
     
     //+ボタンを押した時の処理
@@ -64,7 +64,7 @@ class PhotoViewController: UIViewController {
     }
 }
 
-extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
+extension FolderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return folderNames.count
     }
@@ -123,6 +123,6 @@ extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
-        photoTableView.setEditing(editing, animated: animated)
+        mainTableView.setEditing(editing, animated: animated)
     }
 }
