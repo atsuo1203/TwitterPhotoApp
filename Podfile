@@ -6,6 +6,7 @@ target 'TwitterPhotoApp' do
   use_frameworks!
     pod 'TwitterKit'
     pod 'RealmSwift'
+    pod 'SwiftyJSON'
 
   # Pods for TwitterPhotoApp
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import TwitterKit
+import SwiftyJSON
 
 class DetailViewController: UIViewController {
 
@@ -24,14 +25,14 @@ class DetailViewController: UIViewController {
     
     func getSantaGirls() {
         let client = TWTRAPIClient()
-        let statusesShowEndpoint = "https://api.twitter.com/1.1/search/tweets.json"
+        let endpoint = "https://api.twitter.com/1.1/search/tweets.json"
         let params = [
             "q": "#サンタコス -割 -Set -メイド風 -アクセント -点セット -お買い得 -#子供 -#マンチカン -#サンタ衣装 -#コスチューム -#sugar filter:images exclude:retweets ",
             "lang": "ja",
             "count": "1",
             ]
         var clientError : NSError?
-        let request = client.urlRequest(withMethod: "GET", url: statusesShowEndpoint, parameters: params, error: &clientError)
+        let request = client.urlRequest(withMethod: "GET", url: endpoint, parameters: params, error: &clientError)
         client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
             if connectionError != nil {
                 print("Error: \(String(describing: connectionError))")
