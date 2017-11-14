@@ -9,6 +9,7 @@
 import UIKit
 import TwitterKit
 import SwiftyJSON
+import SDWebImage
 
 class DetailViewController: UIViewController {
     @IBOutlet weak var mainCollectionView: UICollectionView!
@@ -36,7 +37,7 @@ class DetailViewController: UIViewController {
         let params = [
             "q": self.navigationItem.title! + " filter:images exclude:retweets ",
             "lang": "ja",
-            "count": "25",
+            "count": "100",
             ]
         var clientError : NSError?
         let request = client.urlRequest(withMethod: "GET", url: endpoint, parameters: params, error: &clientError)
@@ -86,8 +87,7 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCollectionViewCell
         let url = URL(string: self.imageURLs[indexPath.row])!
-        let imageData = try? Data.init(contentsOf: url)
-        cell.imageView.image = UIImage(data: imageData!)
+        cell.imageView.sd_setImage(with: url, completed: nil)
         return cell
     }
     
