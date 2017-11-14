@@ -7,6 +7,7 @@ target 'TwitterPhotoApp' do
     pod 'TwitterKit'
     pod 'RealmSwift'
     pod 'SwiftyJSON'
+    pod 'SDWebImage'
 
   # Pods for TwitterPhotoApp
 
