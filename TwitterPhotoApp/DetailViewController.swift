@@ -37,7 +37,7 @@ class DetailViewController: UIViewController {
         let params = [
             "q": self.navigationItem.title! + " filter:images exclude:retweets ",
             "lang": "ja",
-            "count": "100",
+            "count": "200",
             ]
         var clientError : NSError?
         let request = client.urlRequest(withMethod: "GET", url: endpoint, parameters: params, error: &clientError)
